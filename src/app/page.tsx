@@ -27,7 +27,7 @@ export default function Home() {
       <TeamSection />
       <FaqSection />
       <FinalCta />
-      
+
       {/* Floating Elements */}
       <FloatingCTA />
       <ExitIntentModal />

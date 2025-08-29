@@ -14,27 +14,21 @@ import {
   Building2,
   Shield,
   FileText,
-  ExternalLink
+  ExternalLink,
 } from 'lucide-react';
 
 export default function Footer() {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
 
-  const services = [
-    'Внедрение 1С',
-    'Доработка 1С',
-    'Обслуживание 1С',
-    'Обучение 1С',
-    'Аудит 1С'
-  ];
+  const services = ['Внедрение 1С', 'Доработка 1С', 'Обслуживание 1С', 'Обучение 1С', 'Аудит 1С'];
 
   const quickLinks = [
     { name: 'О компании', href: '#about' },
     { name: 'Услуги', href: '#services' },
     { name: 'Кейсы', href: '#cases' },
     { name: 'Команда', href: '#team' },
-    { name: 'FAQ', href: '#faq' }
+    { name: 'FAQ', href: '#faq' },
   ];
 
   return (
@@ -63,7 +57,8 @@ export default function Footer() {
                 <h3 className="text-2xl font-bold">Кайдзен-софт</h3>
               </div>
               <p className="text-gray-300 leading-relaxed">
-                Превращаем хаос в 1С в управляемую систему. Более 12 лет опыта в автоматизации бизнеса.
+                Превращаем хаос в 1С в управляемую систему. Более 12 лет опыта в автоматизации
+                бизнеса.
               </p>
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <Shield className="h-4 w-4" />
@@ -83,7 +78,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {services.map((service, index) => (
                   <li key={index}>
-                    <button 
+                    <button
                       onClick={() => setIsContactModalOpen(true)}
                       className="text-gray-300 hover:text-white transition-colors duration-200 text-left"
                     >
@@ -106,7 +101,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 {quickLinks.map((link, index) => (
                   <li key={index}>
-                    <a 
+                    <a
                       href={link.href}
                       className="text-gray-300 hover:text-white transition-colors duration-200 flex items-center gap-1"
                     >
@@ -130,8 +125,8 @@ export default function Footer() {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-blue-400" />
-                  <a 
-                    href="tel:+74012520073" 
+                  <a
+                    href="tel:+74012520073"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     +7 (4012) 520-073
@@ -139,8 +134,8 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-4 w-4 text-blue-400" />
-                  <a 
-                    href="mailto:crm@kaizen-soft.com" 
+                  <a
+                    href="mailto:crm@kaizen-soft.com"
                     className="text-gray-300 hover:text-white transition-colors"
                   >
                     crm@kaizen-soft.com
@@ -149,7 +144,9 @@ export default function Footer() {
                 <div className="flex items-center gap-3">
                   <MapPin className="h-4 w-4 text-blue-400" />
                   <span className="text-gray-300">
-                    г. Калининград,<br />ул. М.Косогорная, д. 11
+                    г. Калининград,
+                    <br />
+                    ул. М.Косогорная, д. 11
                   </span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -172,7 +169,8 @@ export default function Footer() {
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-4">Готовы обсудить ваш проект?</h3>
                 <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                  Получите бесплатную консультацию и узнайте, как мы можем помочь автоматизировать ваш бизнес
+                  Получите бесплатную консультацию и узнайте, как мы можем помочь автоматизировать
+                  ваш бизнес
                 </p>
                 <Button
                   onClick={() => setIsContactModalOpen(true)}

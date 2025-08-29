@@ -14,7 +14,7 @@ export default function ExitIntentModal() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: ''
+    phone: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -52,13 +52,13 @@ export default function ExitIntentModal() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Close modal after success
     setTimeout(() => {
       setIsOpen(false);
@@ -116,13 +116,14 @@ export default function ExitIntentModal() {
                     <Gift className="h-4 w-4" />
                     Эксклюзивное предложение
                   </div>
-                  
+
                   <h3 className="text-3xl font-bold text-gray-900 mb-4">
                     Получите <span className="text-red-500">бесплатный аудит 1С</span>
                   </h3>
-                  
+
                   <p className="text-lg text-gray-600 mb-6">
-                    Оставьте контакты прямо сейчас и получите детальный анализ вашей системы 1С стоимостью 50 000 рублей совершенно бесплатно!
+                    Оставьте контакты прямо сейчас и получите детальный анализ вашей системы 1С
+                    стоимостью 50 000 рублей совершенно бесплатно!
                   </p>
 
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
@@ -154,12 +155,12 @@ export default function ExitIntentModal() {
                         type="text"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                        onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                         placeholder="Введите ваше имя"
                         className="mt-1 h-12 border-2 border-gray-200 focus:border-red-500"
                       />
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="exit-phone" className="text-sm font-medium text-gray-700">
                         Телефон *
@@ -169,7 +170,9 @@ export default function ExitIntentModal() {
                         type="tel"
                         required
                         value={formData.phone}
-                        onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                        onChange={(e) =>
+                          setFormData((prev) => ({ ...prev, phone: e.target.value }))
+                        }
                         placeholder="+7 (___) ___-__-__"
                         className="mt-1 h-12 border-2 border-gray-200 focus:border-red-500"
                       />
@@ -185,7 +188,7 @@ export default function ExitIntentModal() {
                       type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                       placeholder="your@email.com"
                       className="mt-1 h-12 border-2 border-gray-200 focus:border-red-500"
                     />

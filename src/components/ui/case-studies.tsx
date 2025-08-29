@@ -5,12 +5,7 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ui/contact-modal';
 import CaseStudyModal from '@/components/ui/case-study-modal';
 import { motion } from 'framer-motion';
-import {
-    TrendingUp, ArrowRight,
-    Play,
-    Star,
-    CheckCircle
-} from 'lucide-react';
+import { TrendingUp, ArrowRight, Play, Star, CheckCircle } from 'lucide-react';
 
 const caseStudies = [
   {
@@ -19,17 +14,18 @@ const caseStudies = [
     industry: 'Производство ковров',
     logo: '🏭',
     problem: 'Складские остатки не соответствовали учетным данным на 2.8 млн руб',
-    solution: 'Внедрили систему контроля движения товаров с RFID-метками и автоматизацией процессов',
+    solution:
+      'Внедрили систему контроля движения товаров с RFID-метками и автоматизацией процессов',
     results: [
       { metric: 'Расхождения сократились', value: '98%', detail: 'до 50 тыс руб' },
       { metric: 'Скорость обработки', value: 'в 3 раза', detail: 'быстрее' },
-      { metric: 'ROI за год', value: '340%', detail: 'от инвестиций' }
+      { metric: 'ROI за год', value: '340%', detail: 'от инвестиций' },
     ],
     duration: '4 месяца',
     investment: '2.1 млн руб',
     team: '8 специалистов',
     color: 'from-blue-500 to-blue-600',
-    bgColor: 'bg-blue-50'
+    bgColor: 'bg-blue-50',
   },
   {
     id: 2,
@@ -37,17 +33,18 @@ const caseStudies = [
     industry: 'Торговая сеть',
     logo: '🛒',
     problem: 'Ручное распределение товаров на 22 магазина - 8 часов работы ежедневно',
-    solution: 'Разработали и внедрили систему автоматического распределения и контроля оплат поставщикам',
+    solution:
+      'Разработали и внедрили систему автоматического распределения и контроля оплат поставщикам',
     results: [
       { metric: 'Время распределения', value: 'в 16 раз', detail: 'сократилось' },
       { metric: 'Трудозатраты', value: '80%', detail: 'сократились' },
-      { metric: 'ROI за год', value: '340%', detail: 'от инвестиций' }
+      { metric: 'ROI за год', value: '340%', detail: 'от инвестиций' },
     ],
     duration: '3 месяца',
     investment: '1.8 млн руб',
     team: '6 специалистов',
     color: 'from-green-500 to-green-600',
-    bgColor: 'bg-green-50'
+    bgColor: 'bg-green-50',
   },
   {
     id: 3,
@@ -59,23 +56,23 @@ const caseStudies = [
     results: [
       { metric: 'Убыточные позиции', value: '12 млн руб', detail: 'выявили' },
       { metric: 'Точность калькуляции', value: '95%', detail: 'достигли' },
-      { metric: 'Экономия за год', value: '8.5 млн руб', detail: 'получили' }
+      { metric: 'Экономия за год', value: '8.5 млн руб', detail: 'получили' },
     ],
     duration: '5 месяцев',
     investment: '2.5 млн руб',
     team: '10 специалистов',
     color: 'from-purple-500 to-purple-600',
-    bgColor: 'bg-purple-50'
-  }
+    bgColor: 'bg-purple-50',
+  },
 ];
 
 export default function CaseStudies() {
   const [activeCase, setActiveCase] = useState(0);
-  const [selectedCase, setSelectedCase] = useState<typeof caseStudies[0] | null>(null);
+  const [selectedCase, setSelectedCase] = useState<(typeof caseStudies)[0] | null>(null);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isCaseModalOpen, setIsCaseModalOpen] = useState(false);
 
-  const handleViewCase = (caseStudy: typeof caseStudies[0]) => {
+  const handleViewCase = (caseStudy: (typeof caseStudies)[0]) => {
     setSelectedCase(caseStudy);
     setIsCaseModalOpen(true);
   };
@@ -85,7 +82,10 @@ export default function CaseStudies() {
   };
 
   return (
-    <section id="case-studies" className="relative w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section
+      id="case-studies"
+      className="relative w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -94,9 +94,7 @@ export default function CaseStudies() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Кейсы наших клиентов
-          </h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Кейсы наших клиентов</h2>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-100 rounded-full border border-green-200 mb-6">
             <TrendingUp className="h-4 w-4 text-green-600" />
             <span className="text-sm font-medium text-green-900">Результаты работы</span>
@@ -107,10 +105,10 @@ export default function CaseStudies() {
               показываем результаты в цифрах
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Каждый проект - это конкретные цифры, реальные результаты и довольные клиенты. 
-            Вот что мы смогли сделать для наших партнеров.
+            Каждый проект - это конкретные цифры, реальные результаты и довольные клиенты. Вот что
+            мы смогли сделать для наших партнеров.
           </p>
         </motion.div>
 
@@ -153,7 +151,8 @@ export default function CaseStudies() {
                   <div key={resultIndex} className="flex items-center gap-3">
                     <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
                     <span className="text-sm text-gray-600">
-                      <span className="font-semibold">{result.metric}:</span> {result.value} {result.detail}
+                      <span className="font-semibold">{result.metric}:</span> {result.value}{' '}
+                      {result.detail}
                     </span>
                   </div>
                 ))}
@@ -176,7 +175,7 @@ export default function CaseStudies() {
               </div>
 
               {/* CTA Button */}
-              <Button 
+              <Button
                 onClick={() => handleViewCase(caseStudy)}
                 className={`w-full bg-gradient-to-r ${caseStudy.color} hover:from-gray-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200`}
               >
@@ -209,16 +208,16 @@ export default function CaseStudies() {
               Начните с бесплатного аудита вашей 1С и узнайте, сколько денег теряете прямо сейчас
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={handleContactClick}
                 className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 <Play className="h-5 w-5 mr-2" />
                 Записаться на аудит
               </Button>
-              <Button 
+              <Button
                 onClick={handleContactClick}
-                variant="outline" 
+                variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold"
               >
                 Обсудить проект
@@ -243,7 +242,11 @@ export default function CaseStudies() {
         onClose={() => setIsContactModalOpen(false)}
         title="Получить бесплатный аудит 1С за 3 дня"
         description="Узнайте, как получить такой же результат для вашего бизнеса"
-        caseStudy={selectedCase ? { company: selectedCase.company, industry: selectedCase.industry } : undefined}
+        caseStudy={
+          selectedCase
+            ? { company: selectedCase.company, industry: selectedCase.industry }
+            : undefined
+        }
       />
     </section>
   );

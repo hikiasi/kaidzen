@@ -108,20 +108,20 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <Button 
+              <Button
                 onClick={() => setIsModalOpen(true)}
-                size="lg" 
+                size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 px-8 py-6 text-lg font-semibold"
               >
                 Получить бесплатный аудит 1С за 3 дня
               </Button>
-              <Button 
+              <Button
                 onClick={() => {
                   const caseStudiesSection = document.getElementById('case-studies');
                   caseStudiesSection?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                variant="outline" 
-                size="lg" 
+                variant="outline"
+                size="lg"
                 className="border-2 border-gray-300 hover:border-gray-400 px-8 py-6 text-lg font-semibold"
               >
                 Посмотреть кейсы
@@ -168,30 +168,30 @@ export default function HeroSection() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">Получить бесплатный аудит</h3>
                 <p className="text-gray-600">Заполните форму и получите персональное предложение</p>
               </div>
-              
+
               <form className="space-y-4">
                 <div>
-                  <Input 
-                    placeholder="Имя" 
-                    type="text" 
+                  <Input
+                    placeholder="Имя"
+                    type="text"
                     className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                   />
                 </div>
                 <div>
-                  <Input 
-                    placeholder="Телефон" 
-                    type="tel" 
+                  <Input
+                    placeholder="Телефон"
+                    type="tel"
                     className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                   />
                 </div>
                 <div>
-                  <Input 
-                    placeholder="Название компании" 
-                    type="text" 
+                  <Input
+                    placeholder="Название компании"
+                    type="text"
                     className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                   />
                 </div>
-                <Button 
+                <Button
                   onClick={() => setIsModalOpen(true)}
                   className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
                 >

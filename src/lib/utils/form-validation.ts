@@ -57,9 +57,9 @@ export async function submitForm(data: any, type: string) {
     return { success: true, data: result };
   } catch (error) {
     console.error('Form submission error:', error);
-    return { 
-      success: false, 
-      error: error instanceof Error ? error.message : 'Неизвестная ошибка' 
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : 'Неизвестная ошибка',
     };
   }
 }
@@ -67,16 +67,16 @@ export async function submitForm(data: any, type: string) {
 // Phone number formatting
 export function formatPhoneNumber(value: string): string {
   const cleaned = value.replace(/\D/g, '');
-  
+
   if (cleaned.startsWith('8')) {
     const withoutFirst = cleaned.slice(1);
     return `+7 ${withoutFirst}`.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2-$3-$4');
   }
-  
+
   if (cleaned.startsWith('7')) {
     return `+${cleaned}`.replace(/(\d{1})(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3-$4-$5');
   }
-  
+
   return value;
 }
 
@@ -87,7 +87,10 @@ export function isValidEmail(email: string): boolean {
 }
 
 // Form field validation
-export function validateField(value: string, type: 'name' | 'email' | 'phone' | 'company'): string | null {
+export function validateField(
+  value: string,
+  type: 'name' | 'email' | 'phone' | 'company'
+): string | null {
   switch (type) {
     case 'name':
       if (!value || value.length < 2) {

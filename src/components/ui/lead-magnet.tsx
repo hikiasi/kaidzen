@@ -12,7 +12,7 @@ export default function LeadMagnet() {
     name: '',
     email: '',
     position: '',
-    company: ''
+    company: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -20,13 +20,13 @@ export default function LeadMagnet() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     setIsSubmitting(false);
     setIsSubmitted(true);
-    
+
     // Reset form after success
     setTimeout(() => {
       setIsSubmitted(false);
@@ -55,7 +55,7 @@ export default function LeadMagnet() {
             <Download className="h-4 w-4 text-blue-600" />
             <span className="text-sm font-medium text-blue-900">Бесплатные материалы</span>
           </div>
-          
+
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl mb-6">
             Получите{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
@@ -63,10 +63,10 @@ export default function LeadMagnet() {
             </span>{' '}
             для развития бизнеса
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Скачайте полезные материалы и узнайте, как другие компании автоматизируют бизнес-процессы 
-            и получают измеримые результаты.
+            Скачайте полезные материалы и узнайте, как другие компании автоматизируют
+            бизнес-процессы и получают измеримые результаты.
           </p>
         </motion.div>
 
@@ -84,15 +84,16 @@ export default function LeadMagnet() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 text-white mb-6">
                   <FileText className="h-8 w-8" />
                 </div>
-                
+
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Чек-лист "7 критических ошибок в 1С"
+                  Чек-лист &ldquo;7 критических ошибок в 1С&rdquo;
                 </h3>
-                
+
                 <p className="text-gray-700 mb-6">
-                  Скачайте чек-лист и проверьте, не совершаете ли вы эти ошибки, которые ежегодно обходятся компаниям в миллионы рублей
+                  Скачайте чек-лист и проверьте, не совершаете ли вы эти ошибки, которые ежегодно
+                  обходятся компаниям в миллионы рублей
                 </p>
-                
+
                 <div className="space-y-3 mb-6">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -107,7 +108,7 @@ export default function LeadMagnet() {
                     <span className="text-gray-700">Получите план исправления</span>
                   </div>
                 </div>
-                
+
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <Users className="h-4 w-4" />
                   <span>Уже скачали 2,847 руководителей</span>
@@ -131,64 +132,80 @@ export default function LeadMagnet() {
                     Заполните форму и получите материал на email в течение 5 минут
                   </p>
                 </div>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <Label htmlFor="name" className="text-base font-medium text-gray-700 mb-2 block">
+                    <Label
+                      htmlFor="name"
+                      className="text-base font-medium text-gray-700 mb-2 block"
+                    >
                       Имя *
                     </Label>
                     <Input
                       id="name"
                       value={formData.name}
-                      onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                      onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
                       placeholder="Ваше имя"
                       className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                       required
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="email" className="text-base font-medium text-gray-700 mb-2 block">
+                    <Label
+                      htmlFor="email"
+                      className="text-base font-medium text-gray-700 mb-2 block"
+                    >
                       Email *
                     </Label>
                     <Input
                       id="email"
                       type="email"
                       value={formData.email}
-                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))}
                       placeholder="your@email.com"
                       className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                       required
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="position" className="text-base font-medium text-gray-700 mb-2 block">
+                    <Label
+                      htmlFor="position"
+                      className="text-base font-medium text-gray-700 mb-2 block"
+                    >
                       Должность
                     </Label>
                     <Input
                       id="position"
                       value={formData.position}
-                      onChange={(e) => setFormData(prev => ({ ...prev, position: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, position: e.target.value }))
+                      }
                       placeholder="Ваша должность"
                       className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                     />
                   </div>
-                  
+
                   <div>
-                    <Label htmlFor="company" className="text-base font-medium text-gray-700 mb-2 block">
+                    <Label
+                      htmlFor="company"
+                      className="text-base font-medium text-gray-700 mb-2 block"
+                    >
                       Компания
                     </Label>
                     <Input
                       id="company"
                       value={formData.company}
-                      onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
+                      onChange={(e) =>
+                        setFormData((prev) => ({ ...prev, company: e.target.value }))
+                      }
                       placeholder="Название компании"
                       className="h-12 text-base border-2 border-gray-200 focus:border-blue-500 rounded-xl"
                     />
                   </div>
-                  
-                  <Button 
+
+                  <Button
                     type="submit"
                     disabled={isSubmitting || isSubmitted}
                     className="w-full h-12 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"

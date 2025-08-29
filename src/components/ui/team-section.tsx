@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ui/contact-modal';
 import { motion } from 'framer-motion';
 import {
-    Users,
-    Award,
-    CheckCircle,
-    ArrowRight,
-    Building2,
-    Zap,
-    Shield,
-    TrendingUp
+  Users,
+  Award,
+  CheckCircle,
+  ArrowRight,
+  Building2,
+  Zap,
+  Shield,
+  TrendingUp,
 } from 'lucide-react';
 
 const teamMembers = [
@@ -24,12 +24,12 @@ const teamMembers = [
     achievements: [
       'Основал компанию в 2012 году',
       '200+ успешных проектов',
-      'Эксперт по ERP системам'
+      'Эксперт по ERP системам',
     ],
     avatar: '👨‍💼',
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-200'
+    borderColor: 'border-blue-200',
   },
   {
     name: 'Мария Сидорова',
@@ -39,27 +39,23 @@ const teamMembers = [
     achievements: [
       'Сертифицированный разработчик 1С',
       'Эксперт по интеграциям',
-      '50+ сложных проектов'
+      '50+ сложных проектов',
     ],
     avatar: '👩‍💻',
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200'
+    borderColor: 'border-green-200',
   },
   {
     name: 'Дмитрий Козлов',
     position: 'Руководитель проектов',
     experience: '10+ лет в автоматизации',
     specialization: 'Управление проектами, внедрение',
-    achievements: [
-      'PMP сертификация',
-      '100+ внедрений',
-      'Эксперт по методологии'
-    ],
+    achievements: ['PMP сертификация', '100+ внедрений', 'Эксперт по методологии'],
     avatar: '👨‍💼',
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200'
+    borderColor: 'border-purple-200',
   },
   {
     name: 'Елена Волкова',
@@ -69,20 +65,30 @@ const teamMembers = [
     achievements: [
       'Сертификация по аналитике',
       '80+ проанализированных процессов',
-      'Эксперт по оптимизации'
+      'Эксперт по оптимизации',
     ],
     avatar: '👩‍💼',
     color: 'from-orange-500 to-orange-600',
     bgColor: 'bg-orange-50',
-    borderColor: 'border-orange-200'
-  }
+    borderColor: 'border-orange-200',
+  },
 ];
 
 const companyStats = [
   { icon: Users, label: '25+', description: 'специалистов', color: 'from-blue-500 to-blue-600' },
   { icon: Award, label: '12 лет', description: 'на рынке', color: 'from-green-500 to-green-600' },
-  { icon: CheckCircle, label: '200+', description: 'проектов', color: 'from-purple-500 to-purple-600' },
-  { icon: TrendingUp, label: '98%', description: 'довольных клиентов', color: 'from-orange-500 to-orange-600' }
+  {
+    icon: CheckCircle,
+    label: '200+',
+    description: 'проектов',
+    color: 'from-purple-500 to-purple-600',
+  },
+  {
+    icon: TrendingUp,
+    label: '98%',
+    description: 'довольных клиентов',
+    color: 'from-orange-500 to-orange-600',
+  },
 ];
 
 export default function TeamSection() {
@@ -109,7 +115,7 @@ export default function TeamSection() {
             <Users className="h-4 w-4 text-green-600" />
             <span className="text-sm font-medium text-green-900">Наша команда</span>
           </div>
-          
+
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl mb-6">
             Команда{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-blue-600">
@@ -117,10 +123,10 @@ export default function TeamSection() {
             </span>{' '}
             с опытом 12+ лет
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Мы собрали лучших специалистов по 1С в СЗФО. Каждый член команды - эксперт в своей области 
-            с многолетним опытом решения сложных бизнес-задач.
+            Мы собрали лучших специалистов по 1С в СЗФО. Каждый член команды - эксперт в своей
+            области с многолетним опытом решения сложных бизнес-задач.
           </p>
         </motion.div>
 
@@ -141,7 +147,9 @@ export default function TeamSection() {
               viewport={{ once: true }}
               className="text-center group"
             >
-              <div className={`w-20 h-20 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <div
+                className={`w-20 h-20 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+              >
                 <stat.icon className="h-10 w-10 text-white" />
               </div>
               <div className="text-3xl font-bold text-gray-900 mb-2">{stat.label}</div>
@@ -161,7 +169,9 @@ export default function TeamSection() {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className={`relative h-full ${member.bgColor} rounded-2xl p-8 border-2 ${member.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}>
+              <div
+                className={`relative h-full ${member.bgColor} rounded-2xl p-8 border-2 ${member.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
+              >
                 {/* Avatar */}
                 <div className="text-center mb-6">
                   <div className="text-6xl mb-4">{member.avatar}</div>
@@ -169,9 +179,7 @@ export default function TeamSection() {
                   <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/80 rounded-full text-sm font-medium text-gray-700 mb-2">
                     {member.position}
                   </div>
-                  <div className="text-sm text-gray-600 mb-3">
-                    {member.experience}
-                  </div>
+                  <div className="text-sm text-gray-600 mb-3">{member.experience}</div>
                 </div>
 
                 {/* Specialization */}
@@ -192,7 +200,7 @@ export default function TeamSection() {
                 </div>
 
                 {/* Contact Button */}
-                <Button 
+                <Button
                   onClick={() => setIsModalOpen(true)}
                   className={`w-full bg-gradient-to-r ${member.color} hover:from-gray-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200`}
                 >
@@ -255,16 +263,16 @@ export default function TeamSection() {
               Наша команда готова взяться за ваш проект и довести его до успешного завершения
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={() => setIsModalOpen(true)}
                 className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 <ArrowRight className="h-5 w-5 mr-2" />
                 Обсудить проект
               </Button>
-              <Button 
+              <Button
                 onClick={() => setIsModalOpen(true)}
-                variant="outline" 
+                variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold"
               >
                 Познакомиться с командой
