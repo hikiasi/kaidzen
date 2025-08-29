@@ -5,37 +5,38 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ui/contact-modal';
 import { motion } from 'framer-motion';
 import {
-    Building2,
-    Warehouse,
-    FileText,
-    Zap,
-    Shield,
-    ArrowRight,
-    CheckCircle,
-    Clock,
-    Users,
-    TrendingUp,
-    DollarSign
+  Building2,
+  Warehouse,
+  FileText,
+  Zap,
+  Shield,
+  ArrowRight,
+  CheckCircle,
+  Clock,
+  Users,
+  TrendingUp,
+  DollarSign,
 } from 'lucide-react';
 
 const services = [
   {
     title: 'Полный контроль производства',
     subtitle: '1С:ERP',
-    description: 'Автоматизация всех процессов производства от планирования до отгрузки готовой продукции',
+    description:
+      'Автоматизация всех процессов производства от планирования до отгрузки готовой продукции',
     features: [
       'Планирование производства',
       'Учет себестоимости',
       'Загрузка оборудования',
       'Контроль качества',
-      'Аналитика KPI'
+      'Аналитика KPI',
     ],
     price: 'от 800 тыс руб',
     duration: '3-6 месяцев',
     icon: Building2,
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-200'
+    borderColor: 'border-blue-200',
   },
   {
     title: 'Прозрачная торговля',
@@ -46,14 +47,14 @@ const services = [
       'Складской учет',
       'Продажи и CRM',
       'Аналитика продаж',
-      'Интеграция с сайтом'
+      'Интеграция с сайтом',
     ],
     price: 'от 500 тыс руб',
     duration: '2-4 месяца',
     icon: Warehouse,
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200'
+    borderColor: 'border-green-200',
   },
   {
     title: 'Документооборот без бумаг',
@@ -64,14 +65,14 @@ const services = [
       'Архив документов',
       'Быстрый поиск',
       'Контроль сроков',
-      'Интеграция с 1С'
+      'Интеграция с 1С',
     ],
     price: 'от 300 тыс руб',
     duration: '1-3 месяца',
     icon: FileText,
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200'
+    borderColor: 'border-purple-200',
   },
   {
     title: 'Интеграция всех систем',
@@ -82,14 +83,14 @@ const services = [
       'Подключение CRM',
       'Банковские интеграции',
       'Госуслуги и ЭДО',
-      'Мобильные приложения'
+      'Мобильные приложения',
     ],
     price: 'от 200 тыс руб',
     duration: '1-2 месяца',
     icon: Zap,
     color: 'from-orange-500 to-orange-600',
     bgColor: 'bg-orange-50',
-    borderColor: 'border-orange-200'
+    borderColor: 'border-orange-200',
   },
   {
     title: 'Техподдержка 24/7',
@@ -100,15 +101,15 @@ const services = [
       'Автоматические обновления',
       'Консультации экспертов',
       'Резервное копирование',
-      'Восстановление данных'
+      'Восстановление данных',
     ],
     price: 'от 25 тыс руб/мес',
     duration: 'Постоянно',
     icon: Shield,
     color: 'from-red-500 to-red-600',
     bgColor: 'bg-red-50',
-    borderColor: 'border-red-200'
-  }
+    borderColor: 'border-red-200',
+  },
 ];
 
 export default function ServicesSection() {
@@ -121,7 +122,10 @@ export default function ServicesSection() {
   };
 
   return (
-    <section id="services" className="relative w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+    <section
+      id="services"
+      className="relative w-full py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -130,9 +134,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
-            Наши услуги
-          </h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Наши услуги</h2>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 rounded-full border border-purple-200 mb-6">
             <Zap className="h-4 w-4 text-purple-600" />
             <span className="text-sm font-medium text-purple-900">Наши услуги</span>
@@ -143,10 +145,10 @@ export default function ServicesSection() {
               автоматизируем
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Мы не просто "внедряем 1С" - мы решаем конкретные бизнес-задачи. 
-            Каждый проект - это результат, который вы можете измерить в деньгах.
+            Мы не просто &ldquo;внедряем 1С&rdquo; - мы решаем конкретные бизнес-задачи. Каждый
+            проект - это результат, который вы можете измерить в деньгах.
           </p>
         </motion.div>
 
@@ -161,9 +163,13 @@ export default function ServicesSection() {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className={`relative h-full ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}>
+              <div
+                className={`relative h-full ${service.bgColor} rounded-2xl p-8 border-2 ${service.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
+              >
                 {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${service.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
                   <service.icon className="h-8 w-8" />
                 </div>
 
@@ -177,10 +183,8 @@ export default function ServicesSection() {
                       {service.subtitle}
                     </div>
                   </div>
-                  
-                  <p className="text-gray-700 leading-relaxed">
-                    {service.description}
-                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">{service.description}</p>
 
                   {/* Features */}
                   <div className="space-y-2">
@@ -205,7 +209,7 @@ export default function ServicesSection() {
                   </div>
 
                   {/* CTA Button */}
-                  <Button 
+                  <Button
                     onClick={() => handleServiceClick(service.title)}
                     className={`w-full bg-gradient-to-r ${service.color} hover:from-gray-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 group-hover:scale-105`}
                   >
@@ -229,9 +233,7 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">
-            Почему выбирают нас
-          </h3>
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Почему выбирают нас</h3>
           <div className="grid gap-6 md:grid-cols-3">
             <div className="text-center p-6 bg-white rounded-2xl border border-gray-200 shadow-lg">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -274,16 +276,16 @@ export default function ServicesSection() {
               Оставьте заявку и получите персональное предложение с точной стоимостью и сроками
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={() => handleServiceClick('Коммерческое предложение')}
                 className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 <ArrowRight className="h-5 w-5 mr-2" />
                 Получить предложение
               </Button>
-              <Button 
+              <Button
                 onClick={() => handleServiceClick('Обсуждение проекта')}
-                variant="outline" 
+                variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold"
               >
                 Обсудить проект

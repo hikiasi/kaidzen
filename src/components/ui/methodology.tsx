@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ui/contact-modal';
 import { motion } from 'framer-motion';
 import {
-    Search,
-    Lightbulb,
-    Rocket,
-    TrendingUp,
-    ArrowRight,
-    CheckCircle,
-    Clock,
-    Users
+  Search,
+  Lightbulb,
+  Rocket,
+  TrendingUp,
+  ArrowRight,
+  CheckCircle,
+  Clock,
+  Users,
 } from 'lucide-react';
 
 const methodologySteps = [
@@ -25,12 +25,12 @@ const methodologySteps = [
       'Аудит текущих процессов',
       'Анализ проблемных зон',
       'Выявление узких мест',
-      'Оценка рисков'
+      'Оценка рисков',
     ],
     icon: Search,
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-200'
+    borderColor: 'border-blue-200',
   },
   {
     step: '02',
@@ -41,12 +41,12 @@ const methodologySteps = [
       'Проектирование архитектуры',
       'Выбор оптимальных решений',
       'Планирование интеграций',
-      'Техническое задание'
+      'Техническое задание',
     ],
     icon: Lightbulb,
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200'
+    borderColor: 'border-green-200',
   },
   {
     step: '03',
@@ -57,12 +57,12 @@ const methodologySteps = [
       'Поэтапное внедрение',
       'Обучение персонала',
       'Тестирование процессов',
-      'Доработка под потребности'
+      'Доработка под потребности',
     ],
     icon: Rocket,
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200'
+    borderColor: 'border-purple-200',
   },
   {
     step: '04',
@@ -73,13 +73,13 @@ const methodologySteps = [
       'Техническая поддержка',
       'Развитие функционала',
       'Масштабирование системы',
-      'Оптимизация процессов'
+      'Оптимизация процессов',
     ],
     icon: TrendingUp,
     color: 'from-orange-500 to-orange-600',
     bgColor: 'bg-orange-50',
-    borderColor: 'border-orange-200'
-  }
+    borderColor: 'border-orange-200',
+  },
 ];
 
 export default function Methodology() {
@@ -106,17 +106,17 @@ export default function Methodology() {
             <Lightbulb className="h-4 w-4 text-purple-600" />
             <span className="text-sm font-medium text-purple-900">Наш подход</span>
           </div>
-          
+
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl mb-6">
             Почему другие не справляются, а мы{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
               добиваемся результата
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Наш подход: непрерывное улучшение + погружение в бизнес. 
-            Мы не просто программируем - мы решаем бизнес-задачи.
+            Наш подход: непрерывное улучшение + погружение в бизнес. Мы не просто программируем - мы
+            решаем бизнес-задачи.
           </p>
         </motion.div>
 
@@ -131,14 +131,18 @@ export default function Methodology() {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className={`relative h-full ${step.bgColor} rounded-2xl p-8 border-2 ${step.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}>
+              <div
+                className={`relative h-full ${step.bgColor} rounded-2xl p-8 border-2 ${step.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
+              >
                 {/* Step Number */}
                 <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-r from-gray-800 to-gray-900 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
                   {step.step}
                 </div>
 
                 {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${step.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${step.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
                   <step.icon className="h-8 w-8" />
                 </div>
 
@@ -153,10 +157,8 @@ export default function Methodology() {
                       <span>{step.subtitle}</span>
                     </div>
                   </div>
-                  
-                  <p className="text-gray-700 leading-relaxed">
-                    {step.description}
-                  </p>
+
+                  <p className="text-gray-700 leading-relaxed">{step.description}</p>
 
                   {/* Details */}
                   <div className="space-y-2">
@@ -198,7 +200,7 @@ export default function Methodology() {
             <p className="text-xl mb-8 opacity-90">
               Получите бесплатный аудит вашей 1С и узнайте, какие проблемы мешают бизнесу расти
             </p>
-            <Button 
+            <Button
               onClick={() => setIsModalOpen(true)}
               className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
             >

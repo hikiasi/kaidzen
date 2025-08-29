@@ -5,56 +5,64 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ui/contact-modal';
 import { motion } from 'framer-motion';
 import {
-    HelpCircle,
-    ChevronDown,
-    ArrowRight,
-    CheckCircle,
-    Clock,
-    Users,
-    Shield
+  HelpCircle,
+  ChevronDown,
+  ArrowRight,
+  CheckCircle,
+  Clock,
+  Users,
+  Shield,
 } from 'lucide-react';
 
 const faqs = [
   {
     question: 'Сколько времени занимает внедрение 1С?',
-    answer: 'Сроки зависят от сложности проекта. Простые внедрения занимают 1-2 месяца, комплексные проекты - 3-6 месяцев. Мы всегда даем точные сроки на этапе планирования.',
-    category: 'timing'
+    answer:
+      'Сроки зависят от сложности проекта. Простые внедрения занимают 1-2 месяца, комплексные проекты - 3-6 месяцев. Мы всегда даем точные сроки на этапе планирования.',
+    category: 'timing',
   },
   {
     question: 'Какая стоимость внедрения 1С?',
-    answer: 'Стоимость зависит от объема работ и конфигурации. Простые внедрения от 300 тыс руб, комплексные проекты от 800 тыс руб. Мы предоставляем детальную смету после анализа требований.',
-    category: 'pricing'
+    answer:
+      'Стоимость зависит от объема работ и конфигурации. Простые внедрения от 300 тыс руб, комплексные проекты от 800 тыс руб. Мы предоставляем детальную смету после анализа требований.',
+    category: 'pricing',
   },
   {
     question: 'Вы работаете с существующими системами 1С?',
-    answer: 'Да, мы специализируемся на доработке и модернизации существующих систем 1С. Помогаем исправить ошибки, добавить новый функционал и оптимизировать производительность.',
-    category: 'technical'
+    answer:
+      'Да, мы специализируемся на доработке и модернизации существующих систем 1С. Помогаем исправить ошибки, добавить новый функционал и оптимизировать производительность.',
+    category: 'technical',
   },
   {
     question: 'Предоставляете ли вы техническую поддержку?',
-    answer: 'Да, мы предлагаем различные варианты поддержки: от разовых консультаций до полного абонементного обслуживания 24/7 с мониторингом и автоматическими обновлениями.',
-    category: 'support'
+    answer:
+      'Да, мы предлагаем различные варианты поддержки: от разовых консультаций до полного абонементного обслуживания 24/7 с мониторингом и автоматическими обновлениями.',
+    category: 'support',
   },
   {
     question: 'Можете ли вы интегрировать 1С с другими системами?',
-    answer: 'Конечно! Мы интегрируем 1С с сайтами, CRM, банковскими системами, складским оборудованием и другими внешними сервисами. Используем современные API и протоколы обмена данными.',
-    category: 'technical'
+    answer:
+      'Конечно! Мы интегрируем 1С с сайтами, CRM, банковскими системами, складским оборудованием и другими внешними сервисами. Используем современные API и протоколы обмена данными.',
+    category: 'technical',
   },
   {
     question: 'Какие гарантии вы предоставляете?',
-    answer: 'Мы предоставляем гарантию на все работы в течение 12 месяцев. Если возникнут проблемы по нашей вине - исправим бесплатно. Также заключаем договор с четкими обязательствами.',
-    category: 'guarantees'
+    answer:
+      'Мы предоставляем гарантию на все работы в течение 12 месяцев. Если возникнут проблемы по нашей вине - исправим бесплатно. Также заключаем договор с четкими обязательствами.',
+    category: 'guarantees',
   },
   {
     question: 'Работаете ли вы с удаленными клиентами?',
-    answer: 'Да, мы успешно работаем с клиентами по всей России. Используем современные инструменты для удаленной работы: видеоконференции, удаленный доступ, облачные решения.',
-    category: 'logistics'
+    answer:
+      'Да, мы успешно работаем с клиентами по всей России. Используем современные инструменты для удаленной работы: видеоконференции, удаленный доступ, облачные решения.',
+    category: 'logistics',
   },
   {
     question: 'Можете ли вы обучить наших сотрудников работе с 1С?',
-    answer: 'Да, мы проводим обучение персонала работе с внедренными системами. Включаем в проект создание пользовательских инструкций, проведение тренингов и консультации по работе.',
-    category: 'training'
-  }
+    answer:
+      'Да, мы проводим обучение персонала работе с внедренными системами. Включаем в проект создание пользовательских инструкций, проведение тренингов и консультации по работе.',
+    category: 'training',
+  },
 ];
 
 const categories = [
@@ -62,7 +70,7 @@ const categories = [
   { id: 'timing', name: 'Сроки', icon: Clock, color: 'from-green-500 to-green-600' },
   { id: 'pricing', name: 'Стоимость', icon: Users, color: 'from-purple-500 to-purple-600' },
   { id: 'technical', name: 'Технические', icon: Shield, color: 'from-orange-500 to-orange-600' },
-  { id: 'support', name: 'Поддержка', icon: CheckCircle, color: 'from-red-500 to-red-600' }
+  { id: 'support', name: 'Поддержка', icon: CheckCircle, color: 'from-red-500 to-red-600' },
 ];
 
 export default function FAQSection() {
@@ -71,16 +79,13 @@ export default function FAQSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleItem = (index: number) => {
-    setOpenItems(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
+    setOpenItems((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
   };
 
-  const filteredFAQs = activeCategory === 'all' 
-    ? faqs 
-    : faqs.filter(faq => faq.category === activeCategory);
+  const filteredFAQs =
+    activeCategory === 'all' ? faqs : faqs.filter((faq) => faq.category === activeCategory);
 
   return (
     <section className="relative w-full py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
@@ -103,17 +108,17 @@ export default function FAQSection() {
             <HelpCircle className="h-4 w-4 text-blue-600" />
             <span className="text-sm font-medium text-blue-900">Частые вопросы</span>
           </div>
-          
+
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl mb-6">
             Ответы на{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               популярные вопросы
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Мы собрали ответы на самые частые вопросы наших клиентов. 
-            Если не нашли ответ - свяжитесь с нами, и мы ответим лично.
+            Мы собрали ответы на самые частые вопросы наших клиентов. Если не нашли ответ -
+            свяжитесь с нами, и мы ответим лично.
           </p>
         </motion.div>
 
@@ -167,9 +172,7 @@ export default function FAQSection() {
                   onClick={() => toggleItem(index)}
                   className="w-full p-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 rounded-2xl"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 pr-4">
-                    {faq.question}
-                  </h3>
+                  <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>
                   <motion.div
                     animate={{ rotate: openItems.includes(index) ? 180 : 0 }}
                     transition={{ duration: 0.3 }}
@@ -178,20 +181,18 @@ export default function FAQSection() {
                     <ChevronDown className="h-5 w-5 text-gray-500" />
                   </motion.div>
                 </button>
-                
+
                 <motion.div
                   initial={false}
-                  animate={{ 
+                  animate={{
                     height: openItems.includes(index) ? 'auto' : 0,
-                    opacity: openItems.includes(index) ? 1 : 0
+                    opacity: openItems.includes(index) ? 1 : 0,
                   }}
                   transition={{ duration: 0.3, ease: 'easeInOut' }}
                   className="overflow-hidden"
                 >
                   <div className="px-6 pb-6">
-                    <p className="text-gray-700 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -216,16 +217,16 @@ export default function FAQSection() {
               Свяжитесь с нами, и мы ответим на все ваши вопросы о внедрении 1С
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+              <Button
                 onClick={() => setIsModalOpen(true)}
                 className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 <ArrowRight className="h-5 w-5 mr-2" />
                 Задать вопрос
               </Button>
-              <Button 
+              <Button
                 onClick={() => setIsModalOpen(true)}
-                variant="outline" 
+                variant="outline"
                 className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 text-lg font-semibold"
               >
                 Получить консультацию

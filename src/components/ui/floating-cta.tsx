@@ -15,7 +15,7 @@ export default function FloatingCTA() {
     const handleScroll = () => {
       const scrolled = window.scrollY;
       const threshold = window.innerHeight * 0.5; // Show after scrolling 50% of viewport height
-      
+
       setIsVisible(scrolled > threshold);
     };
 
@@ -33,7 +33,7 @@ export default function FloatingCTA() {
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
             className="fixed bottom-6 right-6 z-50"
           >
             <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl shadow-2xl p-6 max-w-sm border border-white/20 backdrop-blur-sm">
@@ -51,7 +51,7 @@ export default function FloatingCTA() {
                 <p className="text-white/90 text-sm mb-4">
                   Получите бесплатную консультацию от экспертов
                 </p>
-                
+
                 <div className="flex flex-col gap-2">
                   <Button
                     onClick={() => setIsModalOpen(true)}
@@ -60,7 +60,7 @@ export default function FloatingCTA() {
                     <ArrowRight className="h-4 w-4 mr-2" />
                     Получить консультацию
                   </Button>
-                  
+
                   <a
                     href="tel:+74012520073"
                     className="flex items-center justify-center gap-2 text-white/90 hover:text-white transition-colors text-sm"

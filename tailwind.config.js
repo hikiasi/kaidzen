@@ -56,7 +56,7 @@ module.exports = {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' },
         },
-        'blob': {
+        blob: {
           '0%': {
             transform: 'translate(0px, 0px) scale(1)',
           },
@@ -70,7 +70,7 @@ module.exports = {
             transform: 'translate(0px, 0px) scale(1)',
           },
         },
-        'float': {
+        float: {
           '0%, 100%': {
             transform: 'translateY(0px)',
           },
@@ -82,15 +82,14 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'blob': 'blob 7s infinite',
-        'float': 'float 6s ease-in-out infinite',
+        blob: 'blob 7s infinite',
+        float: 'float 6s ease-in-out infinite',
       },
       animationDelay: {
-        '2000': '2s',
-        '4000': '4s',
+        2000: '2s',
+        4000: '4s',
       },
     },
   },
   plugins: [require('tailwindcss-animate')],
-}
-
+};

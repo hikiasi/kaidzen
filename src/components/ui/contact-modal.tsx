@@ -1,7 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -22,7 +28,7 @@ import {
   MessageSquare,
   Clock,
   Shield,
-  Award
+  Award,
 } from 'lucide-react';
 
 interface ContactModalProps {
@@ -37,13 +43,13 @@ interface ContactModalProps {
   };
 }
 
-export default function ContactModal({ 
-  isOpen, 
-  onClose, 
-  title = "Получить бесплатный аудит 1С за 3 дня",
-  description = "Оставьте заявку и наш эксперт свяжется с вами в течение 15 минут",
+export default function ContactModal({
+  isOpen,
+  onClose,
+  title = 'Получить бесплатный аудит 1С за 3 дня',
+  description = 'Оставьте заявку и наш эксперт свяжется с вами в течение 15 минут',
   prefilledRole,
-  caseStudy
+  caseStudy,
 }: ContactModalProps) {
   const [formData, setFormData] = useState({
     name: '',
@@ -52,7 +58,7 @@ export default function ContactModal({
     company: '',
     position: '',
     message: '',
-    role: prefilledRole || ''
+    role: prefilledRole || '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -62,13 +68,13 @@ export default function ContactModal({
 
   const validateForm = (): boolean => {
     const newErrors: Record<string, string> = {};
-    
+
     const nameError = validateField(formData.name, 'name');
     if (nameError) newErrors.name = nameError;
-    
+
     const emailError = validateField(formData.email, 'email');
     if (emailError) newErrors.email = emailError;
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -76,18 +82,21 @@ export default function ContactModal({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitError('');
-    
+
     if (!validateForm()) return;
-    
+
     setIsSubmitting(true);
-    
-    const result = await submitForm({
-      ...formData,
-      source: title || 'Контактная форма'
-    }, 'contact');
-    
+
+    const result = await submitForm(
+      {
+        ...formData,
+        source: title || 'Контактная форма',
+      },
+      'contact'
+    );
+
     setIsSubmitting(false);
-    
+
     if (result.success) {
       setIsSubmitted(true);
       setTimeout(() => {
@@ -100,7 +109,7 @@ export default function ContactModal({
           company: '',
           position: '',
           message: '',
-          role: prefilledRole || ''
+          role: prefilledRole || '',
         });
       }, 3000);
     } else {
@@ -109,7 +118,7 @@ export default function ContactModal({
   };
 
   const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   if (isSubmitted) {
@@ -125,12 +134,8 @@ export default function ContactModal({
               <CheckCircle className="h-8 w-8 text-green-600" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Заявка отправлена!</h3>
-            <p className="text-gray-600 mb-4">
-              Наш эксперт свяжется с вами в течение 15 минут
-            </p>
-            <div className="text-sm text-gray-500">
-              Автоматическое закрытие через 3 секунды...
-            </div>
+            <p className="text-gray-600 mb-4">Наш эксперт свяжется с вами в течение 15 минут</p>
+            <div className="text-sm text-gray-500">Автоматическое закрытие через 3 секунды...</div>
           </motion.div>
         </DialogContent>
       </Dialog>
@@ -141,12 +146,8 @@ export default function ContactModal({
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-gray-900 pr-8">
-            {title}
-          </DialogTitle>
-          <DialogDescription className="text-gray-600 text-base">
-            {description}
-          </DialogDescription>
+          <DialogTitle className="text-2xl font-bold text-gray-900 pr-8">{title}</DialogTitle>
+          <DialogDescription className="text-gray-600 text-base">{description}</DialogDescription>
         </DialogHeader>
 
         {/* Trust Indicators */}
@@ -278,7 +279,13 @@ export default function ContactModal({
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Button
               type="submit"
-              disabled={isSubmitting || !formData.name || !formData.phone || !formData.email || !formData.company}
+              disabled={
+                isSubmitting ||
+                !formData.name ||
+                !formData.phone ||
+                !formData.email ||
+                !formData.company
+              }
               className="flex-1 h-12 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isSubmitting ? (
@@ -305,7 +312,7 @@ export default function ContactModal({
 
           <div className="text-xs text-gray-500 text-center">
             Нажимая кнопку, вы соглашаетесь с{' '}
-            <button 
+            <button
               type="button"
               onClick={() => setIsPrivacyModalOpen(true)}
               className="text-blue-600 hover:underline cursor-pointer"

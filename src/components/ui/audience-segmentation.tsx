@@ -5,14 +5,14 @@ import { Button } from '@/components/ui/button';
 import ContactModal from '@/components/ui/contact-modal';
 import { motion } from 'framer-motion';
 import {
-    Building2,
-    Factory,
-    Calculator,
-    Server,
-    Target,
-    Zap,
-    ArrowRight,
-    CheckCircle
+  Building2,
+  Factory,
+  Calculator,
+  Server,
+  Target,
+  Zap,
+  ArrowRight,
+  CheckCircle,
 } from 'lucide-react';
 
 const audienceCards = [
@@ -24,11 +24,11 @@ const audienceCards = [
     painPoints: [
       'Не видите реальную картину бизнеса',
       'Принимаете решения на основе неточных данных',
-      'Теряете деньги из-за ошибок в учете'
+      'Теряете деньги из-за ошибок в учете',
     ],
     color: 'from-blue-500 to-blue-600',
     bgColor: 'bg-blue-50',
-    borderColor: 'border-blue-200'
+    borderColor: 'border-blue-200',
   },
   {
     icon: Factory,
@@ -38,11 +38,11 @@ const audienceCards = [
     painPoints: [
       'Не знаете точную себестоимость продукции',
       'Планируете производство интуитивно',
-      'Не видите узкие места в процессах'
+      'Не видите узкие места в процессах',
     ],
     color: 'from-green-500 to-green-600',
     bgColor: 'bg-green-50',
-    borderColor: 'border-green-200'
+    borderColor: 'border-green-200',
   },
   {
     icon: Calculator,
@@ -52,11 +52,11 @@ const audienceCards = [
     painPoints: [
       'Ручное сведение отчетов занимает дни',
       'Данные устаревают до получения',
-      'Высокий риск ошибок в расчетах'
+      'Высокий риск ошибок в расчетах',
     ],
     color: 'from-purple-500 to-purple-600',
     bgColor: 'bg-purple-50',
-    borderColor: 'border-purple-200'
+    borderColor: 'border-purple-200',
   },
   {
     icon: Server,
@@ -66,12 +66,12 @@ const audienceCards = [
     painPoints: [
       'Система нестабильна и часто падает',
       'Интеграции работают с перебоями',
-      'Нет поддержки от исполнителей'
+      'Нет поддержки от исполнителей',
     ],
     color: 'from-orange-500 to-orange-600',
     bgColor: 'bg-orange-50',
-    borderColor: 'border-orange-200'
-  }
+    borderColor: 'border-orange-200',
+  },
 ];
 
 export default function AudienceSegmentation() {
@@ -104,17 +104,17 @@ export default function AudienceSegmentation() {
             <Target className="h-4 w-4 text-blue-600" />
             <span className="text-sm font-medium text-blue-900">Целевая аудитория</span>
           </div>
-          
+
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl mb-6">
             Мы решаем боль руководителей,{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
               которые уже обожглись
             </span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Каждый день вы сталкиваетесь с проблемами, которые мешают бизнесу расти. 
-            Мы знаем, как их решить, потому что уже помогли сотням компаний.
+            Каждый день вы сталкиваетесь с проблемами, которые мешают бизнесу расти. Мы знаем, как
+            их решить, потому что уже помогли сотням компаний.
           </p>
         </motion.div>
 
@@ -129,9 +129,13 @@ export default function AudienceSegmentation() {
               viewport={{ once: true }}
               className="group relative"
             >
-              <div className={`relative h-full ${card.bgColor} rounded-2xl p-8 border-2 ${card.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}>
+              <div
+                className={`relative h-full ${card.bgColor} rounded-2xl p-8 border-2 ${card.borderColor} hover:border-gray-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-2`}
+              >
                 {/* Icon */}
-                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${card.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <div
+                  className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${card.color} text-white mb-6 group-hover:scale-110 transition-transform duration-300`}
+                >
                   <card.icon className="h-8 w-8" />
                 </div>
 
@@ -140,14 +144,10 @@ export default function AudienceSegmentation() {
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
                     {card.title}
                   </h3>
-                  
+
                   <div className="space-y-3">
-                    <p className="text-lg font-semibold text-gray-800">
-                      {card.subtitle}
-                    </p>
-                    <p className="text-gray-600 leading-relaxed">
-                      {card.description}
-                    </p>
+                    <p className="text-lg font-semibold text-gray-800">{card.subtitle}</p>
+                    <p className="text-gray-600 leading-relaxed">{card.description}</p>
                   </div>
 
                   {/* Pain Points */}
@@ -161,7 +161,7 @@ export default function AudienceSegmentation() {
                   </div>
 
                   {/* CTA Button */}
-                  <Button 
+                  <Button
                     onClick={() => handleRoleClick(card.title)}
                     className={`w-full mt-6 bg-gradient-to-r ${card.color} hover:from-gray-700 hover:to-gray-800 text-white border-0 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200 group-hover:scale-105`}
                   >
@@ -193,7 +193,7 @@ export default function AudienceSegmentation() {
             <p className="text-gray-600 mb-6">
               Расскажите о своей проблеме, и мы предложим индивидуальное решение
             </p>
-            <Button 
+            <Button
               onClick={() => handleRoleClick('Другая роль')}
               className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
             >
